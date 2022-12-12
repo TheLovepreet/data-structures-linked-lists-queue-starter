@@ -235,9 +235,9 @@ describe('DoublyLinkedList Methods', () => {
             list.addToTail('C');
             list.addToTail('B');
             list.addToTail('A');
-
-            expect(list.removeFromTail()).to.eql('A');
-            expect(list.tail.value).to.eql('B');
+           
+           expect(list.removeFromTail()).to.eql('A');
+           expect(list.tail.value).to.eql('B');
 
             expect(list.removeFromTail()).to.eql('B');
             expect(list.tail.value).to.eql('C');
