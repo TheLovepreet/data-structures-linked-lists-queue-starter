@@ -54,26 +54,54 @@ class SinglyLinkedList {
         }
         this.head = this.head.next;
         this.length--;
-        return ;
+        return this.head;
 
         // Write your hypothesis on the time complexity of this method here
     }
 
     removeFromTail() {
         // Remove node at tail
+        if(this.head == null){
+            return undefined;
+        }
+        let current = this.head;
+        while(current !== null){
+            if(this.length == 1){
+                this.head = null;
+                this.length--;
+            }
+            else if(current.next.next == null){
+                current.next = null;
+                this.length--;
+                
+                return this;
+            }
+            current = current.next;
+        }
 
         // Write your hypothesis on the time complexity of this method here
     }
 
     peekAtHead() {
         // Return value of head node
+        if(this.length < 1){
+            return undefined;
+        }
+        return this.head.value;
 
         // Write your hypothesis on the time complexity of this method here
     }
 
     print() {
         // Print out the linked list
-        
+        if(this.head == null){
+            return '';
+        }
+        let current = this.head;
+        while(current){
+            console.log(current.value);
+            current = current.next;
+        }
         // Write your hypothesis on the time complexity of this method here
     }
 }
